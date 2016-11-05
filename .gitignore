@@ -1,0 +1,8 @@
+# Visual Studio Code
+/jsconfig.json
+
+# npm packages
+/node_modules
+
+# macOS files
+.DS_Store
