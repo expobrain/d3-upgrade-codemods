@@ -1,0 +1,9 @@
+d3.scale.linear
+d3.scale.sqrt
+d3.scale.pow
+d3.scale.log
+d3.scale.quantize
+d3.scale.threshold
+d3.scale.quantile
+d3.scale.identity
+d3.scale.ordinal
