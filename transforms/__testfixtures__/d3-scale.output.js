@@ -7,3 +7,5 @@ d3.scaleThreshold
 d3.scaleQuantile
 d3.scaleIdentity
 d3.scaleOrdinal
+d3.scaleTime
+d3.scaleUtc

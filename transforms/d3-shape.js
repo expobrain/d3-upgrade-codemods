@@ -1,4 +1,4 @@
-import { isMemberExpression } from './utils'
+import { isMemberExpression, buildMemberExpressionFromLiteral } from './utils'
 
 
 const removedFeature = (featureLiteral) => (j) => {
@@ -8,21 +8,6 @@ const removedFeature = (featureLiteral) => (j) => {
   const body = j.throwStatement(argument)
 
   return j.functionExpression(null, [], j.blockStatement([body]), false, false)
-}
-
-
-const buildMemberExpressionFromLiteral = (literal) => (j) => {
-  const tokens = literal.split('.')
-
-  if (tokens.length < 2) {
-    return j.identifier(tokens[0])
-  }
-
-  const literalPrefix = tokens.slice(0, tokens.length - 1).join('.')
-  const object = buildMemberExpressionFromLiteral(literalPrefix)(j)
-  const property = j.identifier(tokens[tokens.length - 1])
-
-  return j.memberExpression(object, property)
 }
 
 

@@ -7,3 +7,5 @@ d3.scale.threshold
 d3.scale.quantile
 d3.scale.identity
 d3.scale.ordinal
+d3.time.scale
+d3.time.scale.utc
