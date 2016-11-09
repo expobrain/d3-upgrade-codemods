@@ -35,3 +35,12 @@ export const buildMemberExpressionFromLiteral = (literal) => (j) => {
 
   return j.memberExpression(object, property)
 }
+
+
+export const isCallExpression = (node, literal) => {
+  if (node.type !== 'CallExpression') {
+    return false
+  }
+
+  return isMemberExpression(node.callee, literal)
+}
