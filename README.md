@@ -22,6 +22,15 @@ Use the `-d` option for a dry-run and use `-p` to print the output for
 comparison.
 
 
+### Tests
+
+To run the unit tests:
+
+```sh
+npm test
+```
+
+
 ### Included Scripts
 
 #### `d3-axis`
