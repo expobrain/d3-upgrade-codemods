@@ -1,4 +1,4 @@
-import { isMemberExpression, buildMemberExpressionFromLiteral } from './utils'
+import { isMemberExpression, buildMemberExpressionFromLiteral } from './common/utils.js'
 
 
 const removedFeature = (featureLiteral) => (j) => {

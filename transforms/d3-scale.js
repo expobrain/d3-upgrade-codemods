@@ -1,4 +1,4 @@
-import { isIdentifier, isMemberExpression, buildMemberExpressionFromLiteral } from './utils'
+import { isIdentifier, isMemberExpression, buildMemberExpressionFromLiteral } from './common/utils.js'
 
 
 const scaleMap = [

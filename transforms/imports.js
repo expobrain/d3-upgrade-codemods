@@ -1,4 +1,4 @@
-import { isIdentifier } from './utils'
+import { isIdentifier } from './common/utils.js'
 
 /**
  * import d3 from 'd3' ↦ import * as d3 from 'd3'

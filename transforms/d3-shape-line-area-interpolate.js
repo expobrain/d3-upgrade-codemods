@@ -1,4 +1,4 @@
-import { isMemberExpression, isCallExpression } from './utils'
+import { isMemberExpression, isCallExpression } from './common/utils.js'
 
 /**
  * https://github.com/d3/d3/blob/master/CHANGES.md#shapes-d3-shape
