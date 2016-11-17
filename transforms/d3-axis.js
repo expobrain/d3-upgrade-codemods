@@ -55,7 +55,7 @@ export default function transformer(file, api) {
 
       return false
     })
-    .filter((path) => {
+    .replaceWith((path) => {
       const queue = [path.node]
       const orientation = orientationMap[path.node.arguments[0].value]
       let scale
