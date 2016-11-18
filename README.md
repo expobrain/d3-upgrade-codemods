@@ -115,6 +115,23 @@ Transforms `interpolate()` calls into `curve()`.
 
  * d3.[line|area].interpolate() ↦ d3.[line|area].curve()
 
+`line.curve` and `area.curve` now take a function which instantiates a curve for a given context,
+rather than a string. The full list of equivalents:
+
+ * linear ↦ d3.curveLinear
+ * linear-closed ↦ d3.curveLinearClosed
+ * step ↦ d3.curveStep
+ * step-before ↦ d3.curveStepBefore
+ * step-after ↦ d3.curveStepAfter
+ * basis ↦ d3.curveBasis
+ * basis-open ↦ d3.curveBasisOpen
+ * basis-closed ↦ d3.curveBasisClosed
+ * bundle ↦ d3.curveBundle
+ * cardinal ↦ d3.curveCardinal
+ * cardinal-open ↦ d3.curveCardinalOpen
+ * cardinal-closed ↦ d3.curveCardinalClosed
+ * monotone ↦ d3.curveMonotoneX
+
 ```sh
 jscodeshift -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
 ```
