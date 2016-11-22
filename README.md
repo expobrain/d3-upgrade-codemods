@@ -43,7 +43,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.svg.axis().scale(x).orient("left") ↦ d3.axisLeft(x)
 
 ```sh
-jscodeshift -t d3-upgrade-codemods/transforms/d3-axis.js <file>
+jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-axis.js <file>
 ```
 
 
@@ -71,7 +71,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.time.format.iso ↦ d3.isoFormat
 
 ```sh
-jscodeshift -t d3-upgrade-codemods/transforms/d3-scale.js <file>
+jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale.js <file>
 ```
 
 
@@ -84,7 +84,7 @@ Transforms code which uses `d3.timeFormat().parse()` function into `d3.timeParse
  * d3.timeFormat(<fmt>).parse ↦ d3.timeParse(<fmt>)
 
 ```sh
-jscodeshift -t d3-upgrade-codemods/transforms/d3-scale-parse-to-timeParse.js <file>
+jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale-parse-to-timeParse.js <file>
 ```
 
 
@@ -105,7 +105,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.svg.diagonal.radial ↦ **REMOVED**
 
 ```sh
-jscodeshift -t d3-upgrade-codemods/transforms/d3-shape.js <file>
+jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape.js <file>
 ```
 
 
@@ -133,5 +133,5 @@ rather than a string. The full list of equivalents:
  * monotone ↦ d3.curveMonotoneX
 
 ```sh
-jscodeshift -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
+jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
 ```
