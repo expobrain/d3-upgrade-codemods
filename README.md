@@ -13,13 +13,16 @@ This repository contains a collection of codemod scripts for use with
 ### Setup & Run
 
 ```sh
-yarn global add jscodeshift
-git clone https://github.com/expobrain/d3-upgrade-codemods.git
-jscodeshift -t <codemod-script> <file_or_directory>
+$ yarn global add jscodeshift
+$ git clone https://github.com/expobrain/d3-upgrade-codemods.git
+$ jscodeshift -t <codemod-script> <file_or_directory>
 ```
 
 Use the `-d` option for a dry-run and use `-p` to print the output for
 comparison.
+
+> Note that if you code uses [Flow](https://flowtype.org/) annotations you must chnage the default
+> parser with the `--parser flow` switch
 
 
 ### Tests
@@ -27,7 +30,7 @@ comparison.
 To run the unit tests:
 
 ```sh
-yarn test
+$ yarn test
 ```
 
 
@@ -43,7 +46,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.svg.axis().scale(x).orient("left") ↦ d3.axisLeft(x)
 
 ```sh
-jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-axis.js <file>
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-axis.js <file>
 ```
 
 
@@ -71,7 +74,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.time.format.iso ↦ d3.isoFormat
 
 ```sh
-jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale.js <file>
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale.js <file>
 ```
 
 
@@ -84,7 +87,7 @@ Transforms code which uses `d3.timeFormat().parse()` function into `d3.timeParse
  * d3.timeFormat(<fmt>).parse ↦ d3.timeParse(<fmt>)
 
 ```sh
-jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale-parse-to-timeParse.js <file>
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale-parse-to-timeParse.js <file>
 ```
 
 
@@ -105,7 +108,7 @@ Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES
  * d3.svg.diagonal.radial ↦ **REMOVED**
 
 ```sh
-jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape.js <file>
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape.js <file>
 ```
 
 
@@ -133,5 +136,5 @@ rather than a string. The full list of equivalents:
  * monotone ↦ d3.curveMonotoneX
 
 ```sh
-jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
 ```
