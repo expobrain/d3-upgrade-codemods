@@ -14,8 +14,8 @@
   "author": "Daniele Esposti <daniele.esposti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-latest": "~6.16.0",
-    "jest": "~17.0.0"
+    "babel-preset-latest": "^6.22.0",
+    "jest": "^18.1.0"
   },
   "dependencies": {
     "jscodeshift": "~0.3.30"
