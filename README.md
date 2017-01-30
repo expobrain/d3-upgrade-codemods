@@ -140,3 +140,78 @@ rather than a string. The full list of equivalents:
 ```sh
 $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape-line-area-interpolate.js <file>
 ```
+
+
+### `d3-time`
+
+Transforms time intervals in the new format.
+
+* d3.time.second ↦ d3.timeSecond
+* d3.time.minute ↦ d3.timeMinute
+* d3.time.hour ↦ d3.timeHour
+* d3.time.day ↦ d3.timeDay
+* d3.time.sunday ↦ d3.timeSunday
+* d3.time.monday ↦ d3.timeMonday
+* d3.time.tuesday ↦ d3.timeTuesday
+* d3.time.wednesday ↦ d3.timeWednesday
+* d3.time.thursday ↦ d3.timeThursday
+* d3.time.friday ↦ d3.timeFriday
+* d3.time.saturday ↦ d3.timeSaturday
+* d3.time.week ↦ d3.timeWeek
+* d3.time.month ↦ d3.timeMonth
+* d3.time.year ↦ d3.timeYear
+
+The UTC time intervals have likewise been renamed:
+
+* d3.time.second.utc ↦ d3.utcSecond
+* d3.time.minute.utc ↦ d3.utcMinute
+* d3.time.hour.utc ↦ d3.utcHour
+* d3.time.day.utc ↦ d3.utcDay
+* d3.time.sunday.utc ↦ d3.utcSunday
+* d3.time.monday.utc ↦ d3.utcMonday
+* d3.time.tuesday.utc ↦ d3.utcTuesday
+* d3.time.wednesday.utc ↦ d3.utcWednesday
+* d3.time.thursday.utc ↦ d3.utcThursday
+* d3.time.friday.utc ↦ d3.utcFriday
+* d3.time.saturday.utc ↦ d3.utcSaturday
+* d3.time.week.utc ↦ d3.utcWeek
+* d3.time.month.utc ↦ d3.utcMonth
+* d3.time.year.utc ↦ d3.utcYear
+
+The local time range aliases have been renamed:
+
+* d3.time.seconds ↦ d3.timeSeconds
+* d3.time.minutes ↦ d3.timeMinutes
+* d3.time.hours ↦ d3.timeHours
+* d3.time.days ↦ d3.timeDays
+* d3.time.sundays ↦ d3.timeSundays
+* d3.time.mondays ↦ d3.timeMondays
+* d3.time.tuesdays ↦ d3.timeTuesdays
+* d3.time.wednesdays ↦ d3.timeWednesdays
+* d3.time.thursdays ↦ d3.timeThursdays
+* d3.time.fridays ↦ d3.timeFridays
+* d3.time.saturdays ↦ d3.timeSaturdays
+* d3.time.weeks ↦ d3.timeWeeks
+* d3.time.months ↦ d3.timeMonths
+* d3.time.years ↦ d3.timeYears
+
+The UTC time range aliases have been renamed:
+
+* d3.time.seconds.utc ↦ d3.utcSeconds
+* d3.time.minutes.utc ↦ d3.utcMinutes
+* d3.time.hours.utc ↦ d3.utcHours
+* d3.time.days.utc ↦ d3.utcDays
+* d3.time.sundays.utc ↦ d3.utcSundays
+* d3.time.mondays.utc ↦ d3.utcMondays
+* d3.time.tuesdays.utc ↦ d3.utcTuesdays
+* d3.time.wednesdays.utc ↦ d3.utcWednesdays
+* d3.time.thursdays.utc ↦ d3.utcThursdays
+* d3.time.fridays.utc ↦ d3.utcFridays
+* d3.time.saturdays.utc ↦ d3.utcSaturdays
+* d3.time.weeks.utc ↦ d3.utcWeeks
+* d3.time.months.utc ↦ d3.utcMonths
+* d3.time.years.utc ↦ d3.utcYears
+
+```sh
+$ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-time.js <file>
+```
