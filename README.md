@@ -11,7 +11,8 @@ This repository contains a collection of codemod scripts for use with
 > only the changes I needed to apply to my codebase. Please feel free to contribute with additional
 > codemods to increase the change's coverage.
 
-### Setup & Run
+
+## Setup & Run
 
 ```sh
 $ yarn global add jscodeshift
@@ -26,7 +27,7 @@ comparison.
 > parser with the `--parser flow` switch
 
 
-### Tests
+## Tests
 
 To run the unit tests:
 
@@ -35,9 +36,9 @@ $ yarn test
 ```
 
 
-### Included Scripts
+## Included Scripts
 
-#### `d3-axis`
+### `d3-axis`
 
 Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES.md#axes-d3-axis):
 
@@ -51,7 +52,7 @@ $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-axis.js <
 ```
 
 
-#### `d3-scale`
+### `d3-scale`
 
 Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES.md#scales-d3-scale):
 
@@ -79,7 +80,7 @@ $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale.js 
 ```
 
 
-#### `d3-scale-parse-to-timeParse`
+### `d3-scale-parse-to-timeParse`
 
 Transforms code which uses `d3.timeFormat().parse()` function into `d3.timeParse()`.
 
@@ -92,7 +93,7 @@ $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-scale-par
 ```
 
 
-#### `d3-shape`
+### `d3-shape`
 
 Apply changes relative to [d3-axis](https://github.com/d3/d3/blob/master/CHANGES.md#shapes-d3-shape):
 
@@ -113,7 +114,7 @@ $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-shape.js 
 ```
 
 
-#### `d3-shape-line-area-interpolate`
+### `d3-shape-line-area-interpolate`
 
 Transforms `interpolate()` calls into `curve()`.
 
