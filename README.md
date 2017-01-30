@@ -13,7 +13,7 @@ This repository contains a collection of codemod scripts for use with
 ### Setup & Run
 
 ```sh
-npm install -g jscodeshift
+yarn global add jscodeshift
 git clone https://github.com/expobrain/d3-upgrade-codemods.git
 jscodeshift -t <codemod-script> <file_or_directory>
 ```
@@ -27,7 +27,7 @@ comparison.
 To run the unit tests:
 
 ```sh
-npm test
+yarn test
 ```
 
 
