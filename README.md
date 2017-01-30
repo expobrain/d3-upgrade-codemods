@@ -6,7 +6,8 @@ This repository contains a collection of codemod scripts for use with
 [JSCodeshift](https://github.com/facebook/jscodeshift) to upgrade code using
 [d3](https://d3js.org/) version 3.x to the version 4.x.
 
-> Note that this codemods are not comprehensive of all the [changes]() of d3 version 4.x but covers
+> Note that this codemods are not comprehensive of all the
+> [changes](https://github.com/d3/d3/blob/master/CHANGES.md) of d3 version 4.x but covers
 > only the changes I needed to apply to my codebase. Please feel free to contribute with additional
 > codemods to increase the change's coverage.
 
