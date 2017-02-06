@@ -23,7 +23,7 @@ $ jscodeshift -t <codemod-script> <file_or_directory>
 Use the `-d` option for a dry-run and use `-p` to print the output for
 comparison.
 
-> Note that if you code uses [Flow](https://flowtype.org/) annotations you must chnage the default
+> Note that if you code uses [Flow](https://flowtype.org/) annotations you must change the default
 > parser with the `--parser flow` switch
 
 
