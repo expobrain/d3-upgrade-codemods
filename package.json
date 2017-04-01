@@ -1,5 +1,5 @@
 {
-  "name": "d3-codemod",
+  "name": "d3-upgrade-codemod",
   "version": "0.1.0",
   "description": "Codemode to migrate d3 from version 3.x",
   "main": "index.js",
