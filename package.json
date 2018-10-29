@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "code:format": "prettier --write"
   },
   "keywords": [
     "d3",
@@ -15,8 +16,14 @@
   "author": "Daniele Esposti <daniele.esposti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
-    "jest": "^23.6.0"
+    "eslint": "^5.8.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3"
   },
   "dependencies": {
     "jscodeshift": "~0.3.30"

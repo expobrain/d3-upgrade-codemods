@@ -1,1 +1,1 @@
-d3.timeFormat("fmt").parse
+d3.timeFormat("fmt").parse;
