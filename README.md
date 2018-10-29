@@ -1,5 +1,7 @@
 # d3-upgrade-codemods
 
+[![Build Status](https://travis-ci.org/expobrain/d3-upgrade-codemods.svg?branch=master)](https://travis-ci.org/expobrain/d3-upgrade-codemods)
+
 Codemods to upgrade d3 from version 3.x.
 
 This repository contains a collection of codemod scripts for use with
