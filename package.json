@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "code:format": "prettier --write"
+    "code:format": "prettier --write *.md transforms/*.js transforms/common/*.js"
   },
   "keywords": [
     "d3",
@@ -18,12 +18,12 @@
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.8.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.26.2",
+    "eslint-plugin-jest": "^23.0.3",
     "eslint-plugin-prettier": "^3.0.0",
-    "jest": "^23.6.0",
-    "jscodeshift": "~0.3.30",
+    "jest": "^24.9.0",
+    "jscodeshift": "~0.6.4",
     "prettier": "^1.14.3"
   }
 }

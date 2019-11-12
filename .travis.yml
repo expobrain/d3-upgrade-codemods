@@ -3,8 +3,12 @@ language: node_js
 cache: yarn
 
 node_js:
-- "6"
-- "8"
-- "9"
-- "10"
-- "11"
+  - "8"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+
+script:
+  - yarn test
+  - prettier --check transforms/*.js transforms/common/*.js
