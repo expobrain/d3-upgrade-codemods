@@ -209,13 +209,3 @@ The UTC time range aliases have been renamed:
 ```sh
 $ jscodeshift --extensions=js,jsx -t d3-upgrade-codemods/transforms/d3-time.js <file>
 ```
-
-# Contribute
-
-Clone the repository, install packages and setup git hooks:
-
-```
-git clone https://github.com/expobrain/d3-upgrade-codemods
-yarn install
-git config core.hooksPath .githooks
-```
