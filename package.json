@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "code:format": "prettier --write"
+    "code:format": "prettier --write *.md transforms/*.js transforms/common/*.js"
   },
   "keywords": [
     "d3",

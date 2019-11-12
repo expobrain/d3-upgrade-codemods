@@ -12,5 +12,5 @@ node_js:
   - "13"
 
 script:
-- yarn test
-- prettier --check *.md transforms/**/*
+  - yarn test
+  - prettier --check transforms/*.js transforms/common/*.js
