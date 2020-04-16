@@ -22,7 +22,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^23.0.3",
     "eslint-plugin-prettier": "^3.0.0",
-    "jest": "^24.9.0",
+    "jest": "^25.3.0",
     "jscodeshift": "~0.6.4",
     "prettier": "^1.14.3"
   }
