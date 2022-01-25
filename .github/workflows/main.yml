@@ -6,20 +6,11 @@ jobs:
   testing-formatting-linting:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version:
-          - "8"
-          - "10"
-          - "11"
-          - "12"
-          - "13"
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "16"
           cache: "yarn"
       - run: yarn
       - run: yarn test
