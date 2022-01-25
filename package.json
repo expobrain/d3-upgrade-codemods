@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "code:format": "prettier --write *.md transforms/*.js transforms/common/*.js"
+    "code:format": "prettier --write *.md transforms/*.js transforms/common/*.js",
+    "code:format:check": "prettier --check *.md transforms/*.js transforms/common/*.js"
   },
   "keywords": [
     "d3",
@@ -15,6 +16,7 @@
   ],
   "author": "Daniele Esposti <daniele.esposti@gmail.com>",
   "license": "MIT",
+  "node": "13",
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
