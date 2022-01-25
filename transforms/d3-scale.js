@@ -1,7 +1,7 @@
 import {
   isIdentifier,
   isMemberExpression,
-  buildMemberExpressionFromLiteral
+  buildMemberExpressionFromLiteral,
 } from "./common/utils.js";
 
 const scaleMap = [
@@ -19,26 +19,26 @@ const scaleMap = [
 
   ["d3.time.format.utc", buildMemberExpressionFromLiteral("d3.utcFormat")],
   ["d3.time.format.iso", buildMemberExpressionFromLiteral("d3.isoFormat")],
-  ["d3.time.format", buildMemberExpressionFromLiteral("d3.timeFormat")]
+  ["d3.time.format", buildMemberExpressionFromLiteral("d3.timeFormat")],
 ];
 
 const scaleCategoryMap = [
   [
     "d3.scale.category10",
-    buildMemberExpressionFromLiteral("d3.schemeCategory10")
+    buildMemberExpressionFromLiteral("d3.schemeCategory10"),
   ],
   [
     "d3.scale.category20",
-    buildMemberExpressionFromLiteral("d3.schemeCategory20")
+    buildMemberExpressionFromLiteral("d3.schemeCategory20"),
   ],
   [
     "d3.scale.category20b",
-    buildMemberExpressionFromLiteral("d3.schemeCategory20b")
+    buildMemberExpressionFromLiteral("d3.schemeCategory20b"),
   ],
   [
     "d3.scale.category20c",
-    buildMemberExpressionFromLiteral("d3.schemeCategory20c")
-  ]
+    buildMemberExpressionFromLiteral("d3.schemeCategory20c"),
+  ],
 ];
 
 /**
@@ -70,43 +70,43 @@ export default function transformer(file, api) {
   const root = j(file.source);
 
   // Transform d3.scale
-  scaleMap.forEach(item => {
+  scaleMap.forEach((item) => {
     const [literal, nodeBuilder] = item;
 
     root
       .find(j.MemberExpression)
-      .filter(path => isMemberExpression(path.node, literal))
+      .filter((path) => isMemberExpression(path.node, literal))
       .replaceWith(() => nodeBuilder(j));
   });
 
   // Transform d3.scale.category*
-  scaleCategoryMap.forEach(item => {
+  scaleCategoryMap.forEach((item) => {
     const [literal, nodeBuilder] = item;
 
     // Remove range() calls
     root
       .find(j.CallExpression)
-      .filter(path => isMemberExpression(path.node.callee, literal))
-      .map(path => path.parent)
-      .filter(path => {
+      .filter((path) => isMemberExpression(path.node.callee, literal))
+      .map((path) => path.parent)
+      .filter((path) => {
         return (
           path.node.type === "MemberExpression" &&
           isIdentifier(path.node.property, "range")
         );
       })
-      .replaceWith(path => path.node.object.callee)
-      .map(path => path.parent)
-      .filter(path => path.node.type === "CallExpression")
-      .replaceWith(path => path.node.callee);
+      .replaceWith((path) => path.node.object.callee)
+      .map((path) => path.parent)
+      .filter((path) => path.node.type === "CallExpression")
+      .replaceWith((path) => path.node.callee);
 
     // Transform call and member expressions
     root
       .find(j.CallExpression)
-      .filter(path => isMemberExpression(path.node.callee, literal))
+      .filter((path) => isMemberExpression(path.node.callee, literal))
       .replaceWith(() => nodeBuilder(j));
     root
       .find(j.MemberExpression)
-      .filter(path => isMemberExpression(path.node, literal))
+      .filter((path) => isMemberExpression(path.node, literal))
       .replaceWith(() => nodeBuilder(j));
   });
 

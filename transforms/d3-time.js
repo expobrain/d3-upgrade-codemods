@@ -1,6 +1,6 @@
 import {
   isMemberExpression,
-  buildMemberExpressionFromLiteral
+  buildMemberExpressionFromLiteral,
 } from "./common/utils.js";
 
 const timeMap = [
@@ -13,7 +13,7 @@ const timeMap = [
   ["d3.time.tuesday.utc", buildMemberExpressionFromLiteral("d3.utcTuesday")],
   [
     "d3.time.wednesday.utc",
-    buildMemberExpressionFromLiteral("d3.utcWednesday")
+    buildMemberExpressionFromLiteral("d3.utcWednesday"),
   ],
   ["d3.time.thursday.utc", buildMemberExpressionFromLiteral("d3.utcThursday")],
   ["d3.time.friday.utc", buildMemberExpressionFromLiteral("d3.utcFriday")],
@@ -46,16 +46,16 @@ const timeMap = [
   ["d3.time.tuesdays.utc", buildMemberExpressionFromLiteral("d3.utcTuesdays")],
   [
     "d3.time.wednesdays.utc",
-    buildMemberExpressionFromLiteral("d3.utcWednesdays")
+    buildMemberExpressionFromLiteral("d3.utcWednesdays"),
   ],
   [
     "d3.time.thursdays.utc",
-    buildMemberExpressionFromLiteral("d3.utcThursdays")
+    buildMemberExpressionFromLiteral("d3.utcThursdays"),
   ],
   ["d3.time.fridays.utc", buildMemberExpressionFromLiteral("d3.utcFridays")],
   [
     "d3.time.saturdays.utc",
-    buildMemberExpressionFromLiteral("d3.utcSaturdays")
+    buildMemberExpressionFromLiteral("d3.utcSaturdays"),
   ],
   ["d3.time.weeks.utc", buildMemberExpressionFromLiteral("d3.utcWeeks")],
   ["d3.time.months.utc", buildMemberExpressionFromLiteral("d3.utcMonths")],
@@ -74,7 +74,7 @@ const timeMap = [
   ["d3.time.saturdays", buildMemberExpressionFromLiteral("d3.timeSaturdays")],
   ["d3.time.weeks", buildMemberExpressionFromLiteral("d3.timeWeeks")],
   ["d3.time.months", buildMemberExpressionFromLiteral("d3.timeMonths")],
-  ["d3.time.years", buildMemberExpressionFromLiteral("d3.timeYears")]
+  ["d3.time.years", buildMemberExpressionFromLiteral("d3.timeYears")],
 ];
 
 /**
@@ -145,12 +145,12 @@ export default function transformer(file, api) {
   const root = j(file.source);
 
   // Transform d3.scale
-  timeMap.forEach(item => {
+  timeMap.forEach((item) => {
     const [literal, nodeBuilder] = item;
 
     root
       .find(j.MemberExpression)
-      .filter(path => isMemberExpression(path.node, literal))
+      .filter((path) => isMemberExpression(path.node, literal))
       .replaceWith(() => nodeBuilder(j));
   });
 

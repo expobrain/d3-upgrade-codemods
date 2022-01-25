@@ -13,11 +13,11 @@ export default function transformer(file, api) {
     .find(j.MemberExpression, {
       property: {
         type: "Identifier",
-        name: "parse"
-      }
+        name: "parse",
+      },
     })
-    .filter(path => isCallExpression(path.node.object, "d3.timeFormat"))
-    .replaceWith(path => {
+    .filter((path) => isCallExpression(path.node.object, "d3.timeFormat"))
+    .replaceWith((path) => {
       const callee = j.memberExpression(
         path.node.object.callee.object,
         j.identifier("timeParse")

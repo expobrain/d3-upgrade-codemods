@@ -1,9 +1,9 @@
 import {
   isMemberExpression,
-  buildMemberExpressionFromLiteral
+  buildMemberExpressionFromLiteral,
 } from "./common/utils.js";
 
-const removedFeature = featureLiteral => j => {
+const removedFeature = (featureLiteral) => (j) => {
   const callee = j.identifier("Error");
   const arguments_ = [j.literal(`${featureLiteral} has been removed`)];
   const argument = j.callExpression(callee, arguments_);
@@ -23,7 +23,7 @@ const shapeMap = [
   ["d3.layout.pie", buildMemberExpressionFromLiteral("d3.pie")],
   ["d3.layout.stack", buildMemberExpressionFromLiteral("d3.stack")],
   ["d3.svg.diagonal.radial", removedFeature("d3.svg.diagonal.radial")],
-  ["d3.svg.diagonal", removedFeature("d3.svg.diagonal")]
+  ["d3.svg.diagonal", removedFeature("d3.svg.diagonal")],
 ];
 
 /**
@@ -50,7 +50,7 @@ export default function transformer(file, api) {
 
     root
       .find(j.MemberExpression)
-      .filter(path => isMemberExpression(path.node, literal))
+      .filter((path) => isMemberExpression(path.node, literal))
       .replaceWith(() => nodeBuilder(j));
   }
 
