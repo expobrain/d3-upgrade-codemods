@@ -4,7 +4,7 @@ const orientationMap = {
   top: "axisTop",
   bottom: "axisBottom",
   left: "axisLeft",
-  right: "axisRight"
+  right: "axisRight",
 };
 
 /**
@@ -25,17 +25,19 @@ export default function transformer(file, api) {
         type: "MemberExpression",
         property: {
           type: "Identifier",
-          name: "orient"
-        }
+          name: "orient",
+        },
       },
       arguments: [
         {
-          type: "Literal"
-        }
-      ]
+          type: "Literal",
+        },
+      ],
     })
-    .filter(path => orientationMap.hasOwnProperty(path.node.arguments[0].value))
-    .filter(path => {
+    .filter((path) =>
+      orientationMap.hasOwnProperty(path.node.arguments[0].value)
+    )
+    .filter((path) => {
       const queue = [path.node];
 
       while (queue.length) {
@@ -54,7 +56,7 @@ export default function transformer(file, api) {
 
       return false;
     })
-    .replaceWith(path => {
+    .replaceWith((path) => {
       const queue = [path.node];
       const orientation = orientationMap[path.node.arguments[0].value];
       let scale;

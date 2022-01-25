@@ -8,7 +8,7 @@ export default function transformer(file, api) {
 
   return j(file.source)
     .find(j.ImportDefaultSpecifier)
-    .filter(path => {
+    .filter((path) => {
       return isIdentifier(path.node.local, "d3");
     })
     .replaceWith(() => {

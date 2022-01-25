@@ -21,7 +21,7 @@ export const isIdentifier = (node, name) => {
   return node.type === "Identifier" && node.name === name;
 };
 
-export const buildMemberExpressionFromLiteral = literal => j => {
+export const buildMemberExpressionFromLiteral = (literal) => (j) => {
   const tokens = literal.split(".");
 
   if (tokens.length < 2) {

@@ -1,7 +1,7 @@
 import {
   isMemberExpression,
   isCallExpression,
-  buildMemberExpressionFromLiteral
+  buildMemberExpressionFromLiteral,
 } from "./common/utils.js";
 
 const curveMap = {
@@ -17,7 +17,7 @@ const curveMap = {
   cardinal: buildMemberExpressionFromLiteral("d3.curveCardinal"),
   "cardinal-open": buildMemberExpressionFromLiteral("d3.curveCardinalOpen"),
   "cardinal-closed": buildMemberExpressionFromLiteral("d3.curveCardinalClosed"),
-  monotone: buildMemberExpressionFromLiteral("d3.curveMonotoneX")
+  monotone: buildMemberExpressionFromLiteral("d3.curveMonotoneX"),
 };
 
 /**
@@ -52,11 +52,11 @@ export default function transformer(file, api) {
         type: "MemberExpression",
         property: {
           type: "Identifier",
-          name: "interpolate"
-        }
-      }
+          name: "interpolate",
+        },
+      },
     })
-    .filter(path => {
+    .filter((path) => {
       const queue = [path.node];
 
       while (queue.length) {
@@ -80,7 +80,7 @@ export default function transformer(file, api) {
 
       return false;
     })
-    .replaceWith(path => {
+    .replaceWith((path) => {
       const callee = path.node.callee;
       const arguments_ = path.node.arguments.slice();
 
