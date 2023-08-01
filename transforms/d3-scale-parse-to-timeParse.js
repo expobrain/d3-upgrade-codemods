@@ -20,11 +20,11 @@ export default function transformer(file, api) {
     .replaceWith((path) => {
       const callee = j.memberExpression(
         path.node.object.callee.object,
-        j.identifier("timeParse")
+        j.identifier("timeParse"),
       );
       const callExpression = j.callExpression(
         callee,
-        path.node.object.arguments
+        path.node.object.arguments,
       );
 
       callExpression.callee.property = j.identifier("timeParse");

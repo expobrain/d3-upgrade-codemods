@@ -35,7 +35,7 @@ export default function transformer(file, api) {
       ],
     })
     .filter((path) =>
-      orientationMap.hasOwnProperty(path.node.arguments[0].value)
+      orientationMap.hasOwnProperty(path.node.arguments[0].value),
     )
     .filter((path) => {
       const queue = [path.node];
